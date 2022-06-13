@@ -1,0 +1,130 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BDBUGINIT	dBug/dBug.php	/^			define("BDBUGINIT", TRUE);$/;"	d
+_alacritty	alacritty/alacritty.bash	/^_alacritty()$/;"	f
+arrAccept	dBug/dBug.php	/^		$arrAccept=array("array","object","xml"); \/\/array of variable types that can be "forced"$/;"	v
+arrBacktrace	dBug/dBug.php	/^		$arrBacktrace = debug_backtrace();$/;"	v
+arrCurrent	dBug/dBug.php	/^			$arrCurrent = $arrBacktrace[$i];$/;"	v
+arrFields	dBug/dBug.php	/^		$arrFields = array("name","type","flags");$/;"	v
+arrFile	dBug/dBug.php	/^			$arrFile = $arrCurrent;$/;"	v
+arrHistory	dBug/dBug.php	/^	var $arrHistory = array();$/;"	v
+arrInclude	dBug/dBug.php	/^		$arrInclude = array("include","include_once","require","require_once");$/;"	v
+arrLines	dBug/dBug.php	/^			$arrLines = file($arrFile["file"]);$/;"	v
+arrObjMethods	dBug/dBug.php	/^			$arrObjMethods=get_class_methods(get_class($var));$/;"	v
+arrObjVars	dBug/dBug.php	/^			$arrObjVars=get_object_vars($var);$/;"	v
+arrType	dBug/dBug.php	/^	var $arrType=array("array","object","resource","boolean","NULL");$/;"	v
+bCollapsed	dBug/dBug.php	/^		$this->bCollapsed = $bCollapsed;$/;"	v
+bCollapsed	dBug/dBug.php	/^	var $bCollapsed = false;$/;"	v
+bFile	dBug/dBug.php	/^		$bFile=(!($fp=@fopen($var,"r"))) ? false : true;$/;"	v
+bInitialized	dBug/dBug.php	/^			$this->bInitialized = true;$/;"	v
+bInitialized	dBug/dBug.php	/^	var $bInitialized = false;$/;"	v
+cd_sketch	scripts/sketch	/^cd_sketch () {$/;"	f
+checkType	dBug/dBug.php	/^	function checkType($var) {$/;"	f
+closeTDRow	dBug/dBug.php	/^	function closeTDRow() {$/;"	f
+code	dBug/dBug.php	/^			$code = $arrLines[($arrFile["line"]-1)];$/;"	v
+conda_env_del	scripts/conda_aliases.sh	/^conda_env_del() {$/;"	f
+conda_env_make	scripts/conda_aliases.sh	/^conda_env_make() {$/;"	f
+convmp4_full	scripts/media_aliases.sh	/^convmp4_full() {$/;"	f
+convmp4_half	scripts/media_aliases.sh	/^convmp4_half() {$/;"	f
+convpng	scripts/media_aliases.sh	/^convpng() {$/;"	f
+convsvg	scripts/media_aliases.sh	/^convsvg() {$/;"	f
+count	dBug/dBug.php	/^		$count=$this->xmlCount-1;$/;"	v
+dBug	dBug/dBug.php	/^	function dBug($var,$forceType="",$bCollapsed=false) {$/;"	f
+dBug	dBug/dBug.php	/^class dBug {$/;"	c
+dBug_toggleRow	dBug/dBug.php	/^				function dBug_toggleRow(source) {$/;"	f
+dBug_toggleSource	dBug/dBug.php	/^				function dBug_toggleSource(source) {$/;"	f
+dBug_toggleTable	dBug/dBug.php	/^				function dBug_toggleTable(source) {$/;"	f
+dBug_toggleTarget	dBug/dBug.php	/^				function dBug_toggleTarget(target,switchToState) {$/;"	f
+data	dBug/dBug.php	/^			$data=$var;$/;"	v
+data	dBug/dBug.php	/^		$data=str_replace(array("&lt;!--","--&gt;"),"",htmlspecialchars($data));$/;"	v
+db	dBug/dBug.php	/^				$db=current(explode(" ",get_resource_type($var)));$/;"	v
+db	dBug/dBug.php	/^			$db = "pg";$/;"	v
+db	dBug/dBug.php	/^			$db = "sybase";$/;"	v
+db_func	dBug/dBug.php	/^				$db_func = $db."_field_".$arrFields[$j];$/;"	v
+django_env_create	scripts/django.sh	/^django_env_create() {$/;"	f
+dotup	scripts/dan_aliases.sh	/^dotup() {$/;"	f
+error	dBug/dBug.php	/^		$error="Error: Variable cannot be a";$/;"	v
+error	dBug/dBug.php	/^	function  error($type) {$/;"	f
+ex	scripts/ex.sh	/^ex() {$/;"	f
+fdict	scripts/fzf_scripts.sh	/^fdict() {$/;"	f
+fheader	dBug/dBug.php	/^					$fheader = call_user_func($db_func, $var, $i). " ";$/;"	v
+field_header	dBug/dBug.php	/^			$field_header = "";$/;"	v
+field_name	dBug/dBug.php	/^						$field_name = $fheader;$/;"	v
+fieldrow	dBug/dBug.php	/^				$fieldrow=$row[($field[$k]->name)];$/;"	v
+fieldrow	dBug/dBug.php	/^				$fieldrow=($fieldrow=="") ? "[empty string]" : $fieldrow;$/;"	v
+fkill	scripts/fzf_scripts.sh	/^fkill() {$/;"	f
+g:ruby_host_prog	coc/init.vim	/^let g:ruby_host_prog = '\/home\/dan\/.gem\/gems\/neovim-0.9.0\/exe\/neovim-ruby-host'$/;"	v
+getVariableName	dBug/dBug.php	/^	function getVariableName() {$/;"	f
+gradient_swirl	scripts/gradients.sh	/^gradient_swirl() {$/;"	f
+header	dBug/dBug.php	/^			$header = $this->getVariableName() . " (" . $header . ")";$/;"	v
+initJSandCSS	dBug/dBug.php	/^	function initJSandCSS() {$/;"	f
+kitty_theme	scripts/dan_aliases.sh	/^kitty_theme() {$/;"	f
+makeTDHeader	dBug/dBug.php	/^	function makeTDHeader($type,$header) {$/;"	f
+makeTableHeader	dBug/dBug.php	/^	function makeTableHeader($type,$header,$colspan=2) {$/;"	f
+minCSS	scripts/webdev_aliases.sh	/^minCSS() {$/;"	f
+minJS	scripts/webdev_aliases.sh	/^minJS() {$/;"	f
+mkgif	scripts/media_aliases.sh	/^mkgif() {$/;"	f
+mkvid	scripts/media_aliases.sh	/^mkvid() {$/;"	f
+numfields	dBug/dBug.php	/^		$numfields=call_user_func($db."_num_fields",$var);$/;"	v
+numrows	dBug/dBug.php	/^		$numrows=call_user_func($db."_num_rows",$var);$/;"	v
+poly	scripts/media_aliases.sh	/^poly() {$/;"	f
+polyAll	scripts/media_aliases.sh	/^polyAll () {$/;"	f
+pull_p5	scripts/sketch	/^pull_p5 () {$/;"	f
+pull_three	scripts/sketch	/^pull_three () {$/;"	f
+ripple_gradient	scripts/gradients.sh	/^ripple_gradient() {$/;"	f
+row	dBug/dBug.php	/^			$row=call_user_func($db."_fetch_array",$var,constant(strtoupper($db)."_ASSOC"));$/;"	v
+serve_sketch	scripts/sketch	/^serve_sketch () {$/;"	f
+sketch_pull	scripts/sketch	/^sketch_pull () {$/;"	f
+smartRes	scripts/media_aliases.sh	/^smartRes() {$/;"	f
+smile_gradient	scripts/gradients.sh	/^smile_gradient() {$/;"	f
+spell	scripts/fzf_scripts.sh	/^spell() {$/;"	f
+str_d	dBug/dBug.php	/^		$str_d = ($this->bCollapsed) ? " style=\\"display:none\\"" : "";$/;"	v
+str_i	dBug/dBug.php	/^		$str_i = ($this->bCollapsed) ? "style=\\"font-style:italic\\" " : "";$/;"	v
+td_blur_gradient	scripts/gradients.sh	/^td_blur_gradient() {$/;"	f
+tempField	dBug/dBug.php	/^				$tempField=$field[$k]->name;$/;"	v
+thumb	scripts/media_aliases.sh	/^thumb() {$/;"	f
+thumbAll	scripts/media_aliases.sh	/^thumbAll () {$/;"	f
+ttd	scripts/dan_aliases.sh	/^ttd() {$/;"	f
+ttdump	scripts/dan_aliases.sh	/^ttdump() {$/;"	f
+ttdumpall	scripts/dan_aliases.sh	/^ttdumpall() {$/;"	f
+ttec	scripts/dan_aliases.sh	/^ttec() {$/;"	f
+ttp	scripts/dan_aliases.sh	/^ttp() {$/;"	f
+ttt	scripts/dan_aliases.sh	/^ttt() {$/;"	f
+tty	scripts/dan_aliases.sh	/^tty() {$/;"	f
+value	dBug/dBug.php	/^						$value = "*RECURSION*";$/;"	v
+value	dBug/dBug.php	/^						$value = (is_object($value)) ? "*RECURSION* -> $".get_class($value) : "*RECURSION*";$/;"	v
+value	dBug/dBug.php	/^					$value=(trim($value)=="") ? "[empty string]" : $value;$/;"	v
+value	dBug/dBug.php	/^				$value=(!is_object($value) && !is_array($value) && trim($value)=="") ? "[empty string]" : $value;$/;"	v
+var	dBug/dBug.php	/^				$var=($var=="") ? "[empty string]" : $var;$/;"	v
+var	dBug/dBug.php	/^		$var=($var==1) ? "TRUE" : "FALSE";$/;"	v
+varIsArray	dBug/dBug.php	/^	function varIsArray($var) {$/;"	f
+varIsBoolean	dBug/dBug.php	/^	function varIsBoolean($var) {$/;"	f
+varIsDBResource	dBug/dBug.php	/^	function varIsDBResource($var,$db="mysql") {$/;"	f
+varIsGDResource	dBug/dBug.php	/^	function varIsGDResource($var) {$/;"	f
+varIsNULL	dBug/dBug.php	/^	function varIsNULL() {$/;"	f
+varIsObject	dBug/dBug.php	/^	function varIsObject($var) {$/;"	f
+varIsResource	dBug/dBug.php	/^	function varIsResource($var) {$/;"	f
+varIsXml	dBug/dBug.php	/^	function varIsXml($var) {$/;"	f
+varIsXmlResource	dBug/dBug.php	/^	function varIsXmlResource($var) {$/;"	f
+var_ser	dBug/dBug.php	/^					$var_ser = serialize($value);$/;"	v
+var_ser	dBug/dBug.php	/^		$var_ser = serialize($var);$/;"	v
+voronoi_gradient	scripts/gradients.sh	/^voronoi_gradient() {$/;"	f
+wm2mp4	scripts/media_aliases.sh	/^wm2mp4() {$/;"	f
+xmlAttrib	dBug/dBug.php	/^	var $xmlAttrib;$/;"	v
+xmlCData	dBug/dBug.php	/^	var $xmlCData;$/;"	v
+xmlCharacterData	dBug/dBug.php	/^	function xmlCharacterData($parser,$data) {$/;"	f
+xmlCount	dBug/dBug.php	/^		$this->xmlCount=0;$/;"	v
+xmlCount	dBug/dBug.php	/^	var $xmlCount=0;$/;"	v
+xmlDData	dBug/dBug.php	/^	var $xmlDData;$/;"	v
+xmlDefaultHandler	dBug/dBug.php	/^	function xmlDefaultHandler($parser,$data) {$/;"	f
+xmlDepth	dBug/dBug.php	/^	var $xmlDepth=array();$/;"	v
+xmlEndElement	dBug/dBug.php	/^	function xmlEndElement($parser,$name) {$/;"	f
+xmlName	dBug/dBug.php	/^	var $xmlName;$/;"	v
+xmlParse	dBug/dBug.php	/^	function xmlParse($xml_parser,$data,$bFinal) {$/;"	f
+xmlSData	dBug/dBug.php	/^	var $xmlSData;$/;"	v
+xmlStartElement	dBug/dBug.php	/^	function xmlStartElement($parser,$name,$attribs) {$/;"	f
+xml_parser	dBug/dBug.php	/^		$xml_parser=xml_parser_create();$/;"	v

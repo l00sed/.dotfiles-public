@@ -1,0 +1,89 @@
+#include "/etc/regolith/styles/waterfall/root"
+i3-wm.font:                                   pango:{{fonts.main}} {{fonts.main_size}}
+
+i3-wm.gaps.inner.size:                        0
+i3-wm.gaps.outer.size:                        0
+
+i3-wm.client.focused.color.border:            "#000000"
+i3-wm.client.focused.color.background:        "#000000"
+i3-wm.client.focused.color.text:              "#000000"
+i3-wm.client.focused.color.indicator:         "#000000"
+i3-wm.client.focused.color.child_border:      {{colors.main_highlight}}
+i3-wm.client.urgent.color.border:             "#000000"
+i3-wm.client.urgent.color.background:         "#000000"
+{{#if (eq performance "high")}}
+i3-wm.client.urgent.color.text:               "#000000"
+{{/if}}
+{{#if (eq performance "low")}}
+i3-wm.client.urgent.color.text:               "#ffffff"
+{{/if}}
+
+i3-wm.client.urgent.color.indicator:          "#ff0000"
+i3-wm.client.urgent.color.child_border:       "#ff0000"
+i3-wm.client.unfocused.color.border:          "#00000000"
+i3-wm.client.unfocused.color.background:      "#00000000"
+{{#if (eq performance "high")}}
+i3-wm.client.unfocused.color.text:            "#000000"
+{{/if}}
+{{#if (eq performance "low")}}
+i3-wm.client.unfocused.color.text:            "#ffffff"
+{{/if}}
+i3-wm.client.unfocused.color.indicator:       "#000000"
+i3-wm.client.unfocused.color.child_border:    "#000000"
+i3-wm.client.focused_inactive.color.border:          "#00000000"
+i3-wm.client.focused_inactive.color.background:      "#00000000"
+{{#if (eq performance "high")}}
+i3-wm.client.focused_inactive.color.text:            "#000000"
+{{/if}}
+{{#if (eq performance "low")}}
+i3-wm.client.focused_inactive.color.text:            "#ffffff"
+{{/if}}
+i3-wm.client.focused_inactive.color.indicator:       "#000000"
+i3-wm.client.focused_inactive.color.child_border:    "#000000"
+
+i3-wm.bar.font:                               "pango:{{fonts.main}} {{fonts.main_size}}"
+i3-wm.bar.background.color:                   "#00000000"
+{{#if (eq performance "high")}}
+i3-wm.bar.statusline.color:                   "#000000"
+{{/if}}
+{{#if (eq performance "low")}}
+i3-wm.bar.statusline.color:                   "#FFFFFF"
+{{/if}}
+i3-wm.bar.workspace.active.background.color:  "#00000000"
+i3-wm.bar.workspace.active.border.color:      "#00000000"
+{{#if (eq performance "high")}}
+i3-wm.bar.workspace.active.text.color:        "#000000"
+{{/if}}
+{{#if (eq performance "low")}}
+i3-wm.bar.workspace.active.text.color:        "#FFFFFF"
+{{/if}}
+i3-wm.bar.workspace.inactive.background.color:"#00000000"
+i3-wm.bar.workspace.inactive.border.color:    "#00000000"
+{{#if (eq performance "high")}}
+i3-wm.bar.workspace.inactive.text.color:      "#000000"
+{{/if}}
+{{#if (eq performance "low")}}
+i3-wm.bar.workspace.inactive.text.color:      "#FFFFFF"
+{{/if}}
+i3-wm.bar.workspace.focused.background.color: {{colors.main_highlight}}
+i3-wm.bar.workspace.focused.border.color:     {{colors.main_highlight}}
+i3-wm.bar.workspace.focused.text.color:       "#000000"
+
+i3xrocks.value.font:                          "{{fonts.main}} {{fonts.main_size}}"
+{{#if (eq performance "low")}}
+i3xrocks.value.color:                         {{colors.main_white}}
+i3xrocks.label.color:                         {{colors.main_white}}
+{{/if}}
+{{#if (eq performance "high")}}}
+i3xrocks.value.color:                         {{colors.main_black}}
+i3xrocks.label.color:                         {{colors.main_black}}
+{{/if}}
+
+i3xrocks.warning:                             {{colors.main_highlight}}
+
+i3xrocks.label.sound:                         
+i3xrocks.label.mute:                          ×
+i3xrocks.label.todo:                          
+
+rofi.kb-row-up:                               Up,Alt+k
+rofi.kb-row-down:                             Down,Alt+j

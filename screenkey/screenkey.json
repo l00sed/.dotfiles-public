@@ -1,0 +1,33 @@
+{
+    "no_systray": false,
+    "timeout": 3.0,
+    "recent_thr": 0.1,
+    "compr_cnt": 3,
+    "ignore": [],
+    "position": "bottom",
+    "persist": false,
+    "window": false,
+    "font_desc": "JetBrainsMono Nerd Font Mono Medium 10",
+    "font_size": "medium",
+    "font_color": "#ffffffffffff",
+    "bg_color": "black",
+    "opacity": 0.5,
+    "key_mode": "composed",
+    "bak_mode": "baked",
+    "mods_mode": "normal",
+    "mods_only": false,
+    "multiline": false,
+    "vis_shift": false,
+    "vis_space": true,
+    "geometry": [
+        1080,
+        1950,
+        1919,
+        273
+    ],
+    "geometry": null,
+    "screen": 0,
+    "start_disabled": false,
+    "mouse": false,
+    "button_hide_duration": 1
+}

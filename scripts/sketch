@@ -1,0 +1,270 @@
+#!/bin/bash
+#BEGIN - Table of Contents ====================================
+
+   #  GLOBAL VARIABLES
+   #  FUNCTIONS
+     #  Daily p5js sketch helpers
+       #  Change into today's sketch directory
+       #  Pull boilerplate p5.js repo
+       #  Change into today's sketch and run
+   #  MENU
+
+#END   - Table of Contents ====================================
+
+# -----------------------------------
+#* GLOBAL VARIABLES
+# -----------------------------------
+
+# Setup your Sketch Home directory
+SKETCH_HOME="$HOME/projects/p5js/Daily-Sketches"
+# Setup your preferred threejs boilerplate repo here
+THREE_BOILERPLATE='https://github.com/l00sed/threejs-boilerplate'
+# Setup your preferred p5.js boilerplate repo here
+P5JS_BOILERPLATE='https://github.com/l00sed/p5js-boilerplate-ts'
+
+# -----------------------------------
+#* FUNCTIONS
+# -----------------------------------
+
+#** Daily p5js sketch helpers
+#*** Change into today's sketch directory
+# (create if not exists)
+cd_sketch () {
+  # Setup directory structure based on date
+  year=$(date +%Y)
+  month=$(date +%m)
+  day=$(date +%d)
+
+  # Sketches directory
+  dir=$SKETCH_HOME
+
+  if [ ! -d $dir ]
+  then
+    echo "The SKETCH_HOME variable is set to a directory \($dir\) that does not exists."
+    while true; do
+        read -p "Do you want to create the directory?" yn
+        case $yn in
+            [Yy]* ) mkdir $dir; break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+  fi
+
+  # CD into sketches dir
+  cd "$dir"
+
+  if [ -d "$year" ]
+  then
+    cd $year
+  else
+    mkdir $year
+    cd $year
+  fi
+
+  if [ -d "$month" ]
+  then
+    cd $month
+  else
+    mkdir $month
+    cd $month
+  fi
+
+  if [ -d "$day" ]
+  then
+    cd $day
+  else
+    mkdir $day
+    cd $day
+  fi
+}
+
+#*** Pull boilerplate p5.js repo
+# Meta-function for use in @serve_sketch
+sketch_pull () {
+  case "${4}" in
+      p5)
+        pull_p5 ${1} ${2} ${3}
+        ;;
+      three)
+        pull_three ${1} ${2} ${3}
+        ;;
+      *)
+          cat << EOF
+
+The available environments are:
+  p5 .............. p5.js boilerplate (default)
+  three ........... three.js boilerplate
+
+EOF
+esac
+}
+
+pull_p5 () {
+  git clone $P5JS_BOILERPLATE
+  mv p5js-boilerplate-ts/* ./
+  rm -rf p5js-boilerplate-ts
+  : > README.md
+  echo "# Sketch ${1}_${2}_${3}" > README.md
+  echo "" >> README.md
+  echo '![sketch preview](./sketch.gif)' >> README.md
+  if type tmux >/dev/null 2>/dev/null; then
+    # you can start tmux if you want
+    tmux split-window -v
+  fi
+  npm i
+  npm start
+}
+
+pull_three () {
+  git clone $THREE_BOILERPLATE
+  mv threejs-boilerplate/* ./
+  rm -rf threejs-boilerplate
+  : > README.md
+  echo "# Sketch ${1}_${2}_${3}" > README.md
+  echo "" >> README.md
+  echo '![sketch preview](./sketch.gif)' >> README.md
+  if type tmux >/dev/null 2>/dev/null; then
+    # you can start tmux if you want
+    tmux split-window -v
+  fi
+  npm i --force
+  npm audit fix --force
+  npm run dev --force
+}
+
+#*** Change into today's sketch and run
+# (create directories and pull boilerplate if not exists)
+serve_sketch () {
+  # Setup directory structure based on date
+  month=$(date +%m)
+  day=$(date +%d)
+  year=$(date +%Y)
+
+  # Sketches directory
+  dir=$SKETCH_HOME
+  # Falls back to p5js
+  environment="${1:-p5}"
+
+  if [ ! -d $dir ]
+  then
+    echo "The SKETCH_HOME variable is set to a directory \($dir\) that does not exists."
+    while true; do
+        read -p "Do you want to create the directory?" yn
+        case $yn in
+            [Yy]* ) mkdir $dir; break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
+  fi
+
+  # CD into sketches dir
+  cd $dir
+
+  if [ -d "$year" ]
+  then
+    cd $year
+  else
+    mkdir $year
+    cd $year
+  fi
+
+  if [ -d "$month" ]
+  then
+    cd $month
+  else
+    mkdir $month
+    cd $month
+  fi
+
+  if [ -d "$day" ]
+  then
+    cd $day
+
+    # Check if index.html exists
+    FILE=$dir/$year/$month/$day/README.md
+    if [ -f "$FILE" ]
+    then
+      if type tmux >/dev/null 2>/dev/null; then
+        # you can start tmux if you want
+        tmux split-window -v
+      fi
+      case $environment in
+        p5)
+          npm start
+          ;;
+        three)
+          npm run dev --force
+          ;;
+      esac
+    else
+      sketch_pull $month $day $year $environment
+    fi
+
+  else
+
+    mkdir $day
+    cd $day
+
+    # Check if index.html exists
+    FILE=$dir/$year/$month/$day/README.md
+    if [ -f "$FILE" ]
+    then
+      if type tmux >/dev/null 2>/dev/null; then
+        # you can start tmux if you want
+        tmux split-window -v
+      fi
+      npm start
+    else
+      sketch_pull $month $day $year $environment
+    fi
+
+  fi
+
+}
+
+#######################################
+#* MENU
+#######################################
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+case "$1" in
+    cd_sketch)
+      cd_sketch
+      ;;
+    serve_sketch)
+      serve_sketch "${@:2}"
+      ;;
+    *)
+        cat << EOF
+
+Command line interface for quick computational "sketch" environments
+Also provides quick-deployment features for local hosting.
+
+${bold}USAGE${normal}:
+    sketch <command> [options] [arguments]
+
+${bold}COMMANDS${normal}:
+    cd_sketch .................................
+
+                    Change into a folder with the structure YYYY/MM/DD,
+                    under the $SKETH_HOME directory
+
+    serve_sketch [environment] ................
+
+                    Change into today's sketch folder
+                    ($SKETCH_HOME/YYYY/MM/DD/)
+                    and start the local server.
+                    This will also creates a new tmux split,
+                    if tmux is available.
+                    Available environments are:
+                      p5 ............ p5.js boilerplate
+                      three ......... three.js boilerplate
+
+EOF
+  exit
+  ;;
+esac

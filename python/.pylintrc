@@ -1,0 +1,7 @@
+[MASTER]
+load-plugins=pylint_django
+generated-members=objects
+# The "backend" should be switched to whatever
+# folder settings.py is under in your Django
+# project directory.
+django-settings-module=backend.settings

@@ -1,0 +1,192 @@
+# MAIN VARIABLES
+# --------------------------
+
+[main.variables]
+performance="low" # Set to either "high" or "low" depending on your hardware
+shell_command="zsh" # Set to either "bash" or "zsh", "fish" might come later
+theme="Gruvbox Dark"
+emulator="kitty" # Set to either "kitty" or "alacritty"
+
+# Light
+# ------------------
+#Tomorrow
+#Gruvbox Light
+#BlulocoLight
+#Belafonte Day
+#Novel
+#Tinacious Design (Light)
+
+# Dark
+# ------------------
+#Banana Blueberry
+#ChallengerDeep
+#Chiapre
+#Operator Mono Dark
+#Overnight Slumber
+#Purple Rain
+#Rapture
+#rebecca
+#Royal
+#Belafonte Night
+#BirdsOfParadise
+#Sakura
+#Scarlet Protocol
+#MaterialOcean
+#Tinacious Design (Dark)
+#BlulocoDark
+#Breeze
+#CrayonPonyFish
+#Molokai
+#DimmedMonokai
+#Monokai Remastered
+#Monokai Soda
+#Monokai Vivid
+#Lab Fox
+#SpaceGray
+#Fideloper
+#Duotone Dark
+#FrontEndDelight
+#Zenburn
+#Aurora
+#IC_Orange_PPL
+#Tomorrow Night Bright
+#LiquidCarbonTransparent
+#Tomorrow Night Eighties
+#Ollie
+#Spacedust
+#Brogrammer
+#N0tch2k
+#Square
+#Teerb
+#Lavandula
+#Nocturnal Winter
+#Blue Matrix
+#Whimsy
+#Urple
+
+[main.variables.colors]
+main_highlight="#dbb47b"
+main_black="#000000"
+main_white="#ffffff"
+
+# Light
+[main.variables.fonts]
+main="JetBrainsMono Nerd Font"
+main_alt="JetBrains Mono"
+main_size=12
+[main.variables.shell]
+scripts=true
+mpd=false # Enable mpd daemon
+vimmode=true # Enable sane Vim defaults in bash
+shift=true # Include work aliases
+
+# HELPERS
+# ------------------------------
+
+[helpers]
+
+# PACKAGE DEFINITIONS
+# ------------------------------
+
+# Alacritty
+[alacritty]
+depends=["main"]
+[alacritty.files]
+"alacritty/__alacritty"="~/.config/alacritty/__alacritty"
+"alacritty/alacritty.bash"="~/.config/alacritty/alacritty.bash"
+"alacritty/alacritty.yml"="~/.config/alacritty/alacritty.yml"
+
+# arbtt - automatic, rule-based time tracker
+[arbtt.files]
+"arbtt/categorize.cfg"="~/.arbtt/categorize.cfg"
+
+[bash]
+depends=["main"]
+[bash.files]
+"bash/.bashrc"="~/.bashrc"
+
+# Conqueror of Completion - https://github.com/neoclide/coc.nvim
+[coc.files]
+"coc/coc-settings.json"="~/.config/nvim/coc-settings.json"
+"coc/init.vim"="~/.config/nvim/init.vim"
+
+[compton]
+depends=["main"]
+[compton.files]
+"compton/config"="/etc/regolith/compton/config"
+
+[dBug.files]
+"dBug/dBug.php"="~/.dBug/dBug.php"
+
+[flake8.files]
+"flake8/flake8"="~/.config/flake8"
+
+[fusuma.files]
+"fusuma/config.yml"="~/.config/fusuma/config.yml"
+
+[i3]
+depends=["main"]
+[i3.files]
+"i3/config"="/etc/regolith/i3/config"
+
+[input.files]
+"input/.inputrc"="~/.inputrc"
+
+[kitty]
+depends=["main"]
+[kitty.files]
+"kitty/kitty.conf"="~/.config/kitty/kitty.conf"
+
+# Pipe-Viewer - https://github.com/trizen/pipe-viewer
+[pipe-viewer.files]
+"pipe-viewer/pipe-viewer.conf"="~/.config/pipe-viewer/pipe-viewer.conf"
+
+# Python, pylint
+[python.files]
+"python/.pylintrc"="~/.pylintrc"
+
+[ripgrep.files]
+"ripgrep/.ripgreprc"="~/.ripgreprc"
+[ripgrep.variables]
+ripgrep_config_path="~/.ripgreprc"
+
+[rofi.files]
+"rofi/config.rasi"="~/.config/rofi/config.rasi"
+"rofi/rofi.rasi"="/etc/regolith/styles/waterfall/rofi.rasi"
+
+# Screenkey
+# https://www.thregr.org/~wavexx/software/screenkey/
+# https://gitlab.com/screenkey/screenkey
+[screenkey.files]
+"screenkey/screenkey.json"="~/.config/screenkey.json"
+
+# Scripts and aliases
+[scripts]
+depends=["main"]
+
+# Tmate
+[tmate.files]
+"tmate/.tmate.conf"="~/.tmate.conf"
+
+# Tmux
+[tmux]
+depends=["main"]
+[tmux.files]
+"tmux/.tmux.conf"="~/.tmux.conf"
+"tmux/tmuxline"="~/tmuxline"
+
+[vim]
+depends=["main"]
+[vim.files]
+"vim/.vimrc"="~/.vimrc"
+
+[Xresources]
+depends=["main"]
+[Xresources.files]
+"Xresources/.Xresources-regolith"="~/.Xresources-regolith"
+
+[zsh]
+depends=["main"]
+[zsh.files]
+"zsh/.zshrc"="~/.zshrc"
+"zsh/waterfall.zsh-theme"="~/.oh-my-zsh/themes/waterfall.zsh-theme"

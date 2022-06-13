@@ -1,0 +1,53 @@
+#################### VIM ####################
+# FOR MORE INFORMATION CHECK:
+# https://wiki.archlinux.org/index.php/Readline
+
+# TURN ON VIM (E.G. FOR READLINE)
+set editing-mode vi
+
+# SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
+set show-mode-in-prompt on
+
+# SET THE MODE STRING AND CURSOR TO INDICATE THE VIM MODE
+#   FOR THE NUMBER AFTER `\e[`:
+#     0: blinking block
+#     1: blinking block (default)
+#     2: steady block
+#     3: blinking underline
+#     4: steady underline
+#     5: blinking bar (xterm)
+#     6: steady bar (xterm)
+
+# Disable case-sensitive tab completion
+set completion-ignore-case On
+
+# IMPORTANT - Ties in with the Ultimate PS1 script in .bashrc
+# SET THE COLOR and TEXT STYLE
+#   FOR THE NUMBER AFTER `\1\e[#;#m\2`:
+#      0: reset     0: regular
+#     30: black     1: bold
+#     31: red
+#     32: green
+#     33: yellow
+#     34: blue
+#     35: purple
+#     36: cyan
+#     37: white
+#
+set vi-ins-mode-string "\1\e[37;1m\2┗━━━━━━━━▶ \1\e\[1 q\2"
+set vi-cmd-mode-string "\1\e[37;1m\2┗━━━━━━━━\1\e\[33;1m\2┥ \1\e\[3 q\2"
+set keymap vi-insert
+
+# Colored completions
+set colored-completion-prefix on
+set colored-stats on
+
+# Scroll horizontally instead of wrapping
+#set horizontal-scroll-mode on
+
+# Preserve cursor-location in history
+set history-preserve-point on
+
+# Show all completion options instead of ringing the bell
+#set show-all-if-ambiguous on
+

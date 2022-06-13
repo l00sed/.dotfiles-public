@@ -1,0 +1,23 @@
+# General settings
+# ------------------------------------------------------------------
+# Limit the wall of text (-M0 to disable)
+--max-columns=200
+# Case sensitive when mixed case query
+--smart-case
+# Follow symlinks
+--follow
+
+# Ignores
+# ------------------------------------------------------------------
+# Using glob patterns to include/exclude files or folders
+--glob=!.config
+--glob=!*.min.js
+--glob=!.git
+--glob=!node_modules
+--glob=!vendor
+--glob=!build
+--glob=!yarn.lock
+--glob=!*.sty
+--glob=!*.bst
+--glob=!*.coffee
+--glob=!dist
